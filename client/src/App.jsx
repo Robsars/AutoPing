@@ -1,6 +1,9 @@
 import { useState, useEffect } from 'react'
 
-const API_URL = 'http://localhost:3001/api/jobs';
+// Use relative path in production (Railway), localhost in development
+const API_URL = window.location.hostname === 'localhost'
+  ? 'http://localhost:3001/api/jobs'
+  : '/api/jobs';
 
 const INTERVAL_OPTIONS = [
   '30 seconds',
